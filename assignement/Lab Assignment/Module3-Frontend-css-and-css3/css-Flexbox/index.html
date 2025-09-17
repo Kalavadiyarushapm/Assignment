@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Layout</title>
+  <style>
+     * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: Arial, sans-serif;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+ }
+
+ /* Header */
+ h3 {
+     background: #4CAF50;
+     color: white;
+     text-align: center;
+     padding: 20px;
+     font-size: 1.5rem;
+ }
+
+ /* Main container for sidebar + content */
+ .container {
+     display: flex;
+     flex: 1;
+ }
+
+ /* Sidebar */
+ .sidebar {
+     background: #f4f4f4;
+     padding: 20px;
+     flex: 1;
+     max-width: 150px;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     /* try center / space-between */
+     align-items: flex-start;
+     /* try center */
+ }
+
+ p {
+     padding: 20px;
+ }
+
+ /* Main content */
+ .main {
+     flex: 3;
+     padding: 20px;
+     background: #fff;
+     display: flex;
+     justify-content: center;
+     /* try flex-start / space-around */
+     align-items: center;
+     /* try flex-start / flex-end */
+ }
+
+ /* Footer */
+ footer {
+     background: #333;
+     color: white;
+     text-align: center;
+     padding: 15px;
+ }
+
+ /* Responsive Design */
+
+ @media (max-width: 768px) {
+     .container {
+         flex-direction: column;
+     }
+
+     .sidebar {
+         max-width: 100%;
+         display: flex;
+         justify-content: space-evenly;
+        flex-direction: row;
+         
+         padding: 10px;
+
+     }
+
+     .main {
+         justify-content: flex-start;
+         align-items: flex-start;
+     }
+     h3{
+        font-size: 16px;
+     }
+ }
+  </style>
+ 
+</head>
+<body>
+  <h3>
+    Flexbox Layout Example
+  </h3>
+
+  <div class="container">
+    <div class="sidebar">
+      <p>Home</p>
+      <p>Menu</p>
+      <p>Login</p>
+      <p>Slider</p>
+      
+       
+    </div>
+
+    <main class="main">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, suscipit, nobis magni natus accusamus ea fugit ipsum laudantium consequuntur dolorum molestiae maxime, tempore obcaecati aperiam! Consectetur quibusdam magnam eligendi maiores nisi ipsum doloremque. Totam sapiente rerum in? Quae labore neque praesentium. Magni repellat maiores officia quae quos tempora magnam nostrum, odio laborum culpa nobis alias temporibus voluptates commodi asperiores ad doloribus! Odit pariatur architecto dicta harum autem praesentium recusandae minus nesciunt, voluptas a labore consequatur dolore molestias tempora voluptatum qui dignissimos eum molestiae dolores, blanditiis officia! Accusamus rem aspernatur reprehenderit.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, suscipit, nobis magni natus accusamus ea fugit ipsum laudantium consequuntur dolorum molestiae maxime, tempore obcaecati aperiam! Consectetur quibusdam magnam eligendi maiores nisi ipsum doloremque. Totam sapiente rerum in? Quae labore neque praesentium. Magni repellat maiores officia quae quos tempora magnam nostrum, odio laborum culpa nobis alias temporibus voluptates commodi asperiores ad doloribus! Odit pariatur architecto dicta harum autem praesentium recusandae minus nesciunt, voluptas a labore consequatur dolore molestias tempora voluptatum qui dignissimos eum molestiae dolores, blanditiis officLorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, suscipit, nobis magni natus accusamus ea fugit ipsum laudantium consequuntur dolorum molestiae maxime, tempore obcaecati aperiam! Consectetur quibusdam magnam eligendi maiores nisi ipsum doloremque. Totam sapiente rerum in? Quae labore neque praesentium. Magni repellat maiores officia quae quos tempora magnam nostrum, odio laborum culpa nobis alias temporibus voluptates commodi asperiores ad doloribus! Odit pariatur architecto dicta harum autem praesentium recusandae minus nesciunt, voluptas a labore consequatur dolore molestias tempora voluptatum qui dignissimos eum molestiae dolores, blanditiis offic
+      </p>
+    </main>
+  </div>
+
+  <footer>
+    &copy; 2025 Flexbox Layout Example
+  </footer>
+</body>
+</html>

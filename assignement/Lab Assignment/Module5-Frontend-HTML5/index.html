@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Assignment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f2f2f2;
+      color: #333;
+    }
+    h1, h2 {
+      color: #000;
+    }
+    .box {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    canvas, svg {
+      display: block;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lab Assignment</h1>
+
+  <div class="box">
+    <h2>Audio</h2>
+    <audio controls autoplay muted loop>
+      <source src="sample-audio.mp3" type="audio/mpeg">
+      <source src="sample-audio.ogg" type="audio/ogg">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+
+  <div class="box">
+    <h2>Video</h2>
+    <video width="400" controls autoplay muted loop>
+      <source src="sample-video.mp4" type="video/mp4">
+      <source src="sample-video.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="box">
+    <h2>Canvas</h2>
+    <canvas id="canvas" width="400" height="250"></canvas>
+  </div>
+
+  <div class="box">
+    <h2>SVG</h2>
+    <svg width="400" height="250">
+      <rect x="20" y="20" width="100" height="60" fill="#add8e6" stroke="#000" />
+      <circle cx="200" cy="80" r="40" fill="#ffcccb" stroke="#000" />
+      <line x1="50" y1="200" x2="300" y2="200" stroke="#008000" stroke-width="3" />
+    </svg>
+  </div>
+
+  <script>
+    const c = document.getElementById('canvas');
+    const ctx = c.getContext('2d');
+
+    // Rectangle
+    ctx.fillStyle = '#ffcccb';
+    ctx.fillRect(20, 20, 100, 60);
+
+    // Circle
+    ctx.beginPath();
+    ctx.arc(200, 80, 40, 0, Math.PI * 2);
+    ctx.fillStyle = '#add8e6';
+    ctx.fill();
+    ctx.stroke();
+
+    // Triangle
+    ctx.beginPath();
+    ctx.moveTo(300, 150);
+    ctx.lineTo(250, 220);
+    ctx.lineTo(350, 220);
+    ctx.closePath();
+    ctx.fillStyle = '#90ee90';
+    ctx.fill();
+    ctx.stroke();
+  </script>
+</body>
+</html>

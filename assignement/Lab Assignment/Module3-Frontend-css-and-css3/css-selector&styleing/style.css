@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    place-items: center;
+}
+.form{
+    padding: 20px 40px 20px 40px;
+    background-color: rgb(173, 254, 254);
+    border: 2px solid rgb(66, 150, 151);
+    display:inline-block;
+    
+      
+}
+#btn{
+    padding: 10px 30px;
+    background-color: transparent;
+    border:1px solid rgb(66, 150, 151) ;
+    border-radius: 24px;
+    
+}
+#btn:hover{
+    background-color: black;
+    color: aqua;
+    border: none;
+}

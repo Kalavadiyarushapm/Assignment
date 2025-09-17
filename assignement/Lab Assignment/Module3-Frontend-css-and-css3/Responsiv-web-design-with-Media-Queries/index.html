@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Webpage</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #4CAF50;
+    }
+
+    /* Content Section */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .column {
+      flex: 1;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav h1 {
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .column {
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+
+      nav h1, nav ul li a, .column {
+        font-size: 1.1rem;
+      }
+
+      footer {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <h1>My Website</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Content Section -->
+  <div class="container">
+    <div class="column">
+      <h2>Column 1</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur asperiores veniam corporis repellat ratione aliquam atque sit saepe, quas voluptas explicabo ex magni deserunt magnam dignissimos natus culpa. Enim maiores libero, dignissimos repellat delectus atque, harum explicabo eligendi voluptatibus alias sed eum ipsam dicta quasi suscipit quo distinctio voluptates quas. Quam quaerat dolorum fuga ducimus. Quidem delectus recusandae fuga aliquam earum adipisci perferendis vero, ipsa cum voluptatem facere voluptas iusto?
+        This is the first column. On larger screens, it sits beside column 2. 
+        On smaller screens, it will stack vertically for better readability.
+      </p>
+    </div>
+    <div class="column">
+      <h2>Column 2</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, praesentium ducimus. Praesentium velit quis earum nesciunt fuga, dolorem tempore labore veniam quia aliquid sit corrupti doloremque sequi non ipsa, excepturi animi deleniti! Libero molestiae magnam temporibus provident, corporis eaque qui hic ut minima voluptates vero. Incidunt eveniet sint, quod ullam unde asperiores vel at maxime.
+        This is the second column. Flexbox ensures equal spacing, and media 
+        queries make it responsive across devices.
+      </p>
+    </div>
+    
+  </div>
+   
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 My Website | All Rights Reserved
+  </footer>
+
+</body>
+</html>
