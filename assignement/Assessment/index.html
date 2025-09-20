@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Full Student Registration</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Student Registration Form</h2>
+
+    <form id="regForm">
+
+      <!-- Username -->
+      <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" placeholder="Enter Username" 
+               required minlength="3" maxlength="15" onfocus="highlight(this)" onblur="removeHighlight(this)" />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter Email"
+               required onblur="validateEmail()" />
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password"
+               required minlength="6" oninput="checkPasswordStrength()" />
+        <small id="passMsg"></small>
+      </div>
+
+      <!-- Mobile Number -->
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" placeholder="Enter 10 digit Mobile"
+               required pattern="[0-9]{10}" title="Only 10 digits allowed" />
+      </div>
+
+      <!-- Gender Radio -->
+      <div class="form-group">
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="Male" required /> Male</label>
+        <label><input type="radio" name="gender" value="Female" /> Female</label>
+        <label><input type="radio" name="gender" value="Other" /> Other</label>
+      </div>
+
+      <!-- Hobbies Checkbox -->
+      <div class="form-group">
+        <label>Hobbies:</label>
+        <label><input type="checkbox" name="hobbies" value="Sports" /> Sports</label>
+        <label><input type="checkbox" name="hobbies" value="Reading" /> Reading</label>
+        <label><input type="checkbox" name="hobbies" value="Music" /> Music</label>
+      </div>
+
+      <!-- Dropdown -->
+      <div class="form-group">
+        <label for="course">Course:</label>
+        <select id="course" name="course" required onchange="showCourse()">
+          <option value="">--Select Course--</option>
+          <option value="BCA">BCA</option>
+          <option value="B.Tech">B.Tech</option>
+          <option value="MBA">MBA</option>
+          <option value="MCA">MCA</option>
+        </select>
+        <small id="courseMsg"></small>
+      </div>
+
+      <!-- Date -->
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+      </div>
+
+      <!-- File Upload -->
+      <div class="form-group">
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" />
+      </div>
+
+      <!-- Range -->
+      <div class="form-group">
+        <label for="skill">Skill Level:</label>
+        <input type="range" id="skill" name="skill" min="1" max="10" value="5" oninput="showSkill(this.value)" />
+        <span id="skillValue">5</span>
+      </div>
+
+      <!-- Color -->
+      <div class="form-group">
+        <label for="favColor">Favorite Color:</label>
+        <input type="color" id="favColor" name="favColor" />
+      </div>
+
+      <!-- Submit -->
+      <div class="form-group">
+        <button type="submit" onclick="alert('Form Submitted!')">Register</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Highlight input field on focus
+    function highlight(el) {
+      el.style.backgroundColor = "#e6f7ff";
+    }
+    function removeHighlight(el) {
+      el.style.backgroundColor = "white";
+    }
+
+    // Password strength
+    function checkPasswordStrength() {
+      let pass = document.getElementById("password").value;
+      let msg = document.getElementById("passMsg");
+      if (pass.length < 6) {
+        msg.textContent = "Weak password!";
+        msg.style.color = "red";
+      } else if (pass.length < 10) {
+        msg.textContent = "Medium strength!";
+        msg.style.color = "orange";
+      } else {
+        msg.textContent = "Strong password!";
+        msg.style.color = "green";
+      }
+    }
+
+    // Show selected course
+    function showCourse() {
+      let course = document.getElementById("course").value;
+      document.getElementById("courseMsg").textContent = 
+        course ? "You selected: " + course : "";
+    }
+
+    // Show skill range value
+    function showSkill(val) {
+      document.getElementById("skillValue").textContent = val;
+    }
+
+    // Validate email simple check
+    function validateEmail() {
+      let email = document.getElementById("email").value;
+      if (!email.includes("@")) {
+        alert("Invalid Email Address!");
+      }
+    }
+  </script>
+</body>
+</html>
